@@ -25,6 +25,7 @@ def arg_parser():
     game.add_argument("--size", '-S', help="Size of the game window", type=int, nargs=2, default=[900, 600])
     game.add_argument("--fps", '-f', help="Frames per second", type=int, default=60)
     game.add_argument("--no-gui", help="Disable GUI", action="store_true", default=False)
+    game.add_argument("--laggy", '-l', help="Make the coordinator laggy", action="store_true", default=False)
     return ap
 
 
@@ -43,6 +44,7 @@ def args_to_settings(args):
         for direction, keymap in zip(args.sides, args.keys)
     }
     settings.gui = not args.no_gui
+    settings.laggy = args.laggy
     return settings
 
 

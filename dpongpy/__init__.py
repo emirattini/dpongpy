@@ -17,6 +17,7 @@ class Settings:
     port: Optional[int] = None
     initial_paddles: Collection[Direction] = (Direction.LEFT, Direction.RIGHT)
     gui: bool = True
+    laggy: bool = False
 
 
 class PongGame:
